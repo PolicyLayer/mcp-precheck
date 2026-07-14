@@ -1,8 +1,10 @@
 # mcp-precheck
 
+[![skills.sh](https://skills.sh/b/PolicyLayer/mcp-precheck)](https://skills.sh/PolicyLayer/mcp-precheck)
+
 Agent skill that checks every MCP server against the [PolicyLayer registry](https://policylayer.com/registry) before connecting — identity, risk grade, tool classifications and changes.
 
-MCP servers describe themselves, and those descriptions are claims, not facts. This skill gives an agent one habit: before adding, installing or configuring any MCP server, look it up in a registry of 30,000+ continuously scanned servers and report what the record actually says — who publishes it, what its tools can read, change or destroy, and what changed since the machine last saw it.
+MCP servers describe themselves, and those descriptions are claims, not facts. This skill gives an agent one habit: before adding, installing or configuring any MCP server, look it up in a registry of tens of thousands of continuously scanned servers and report what the record actually says — who publishes it, what its tools can read, change or destroy, and what changed since the machine last saw it.
 
 More: https://policylayer.com/agents
 
@@ -11,10 +13,16 @@ More: https://policylayer.com/agents
 For a human, in any project:
 
 ```
-npx skills add https://policylayer.com -a claude-code -y
+npx skills add PolicyLayer/mcp-precheck
 ```
 
-(`-a` picks the agent to install for — `claude-code`, `cursor`, `codex` and others; without it the installer asks. `-y` accepts the confirmation.)
+The installer detects supported clients and asks where to install the skill. To target one client and skip the prompt, add its agent flag, for example:
+
+```
+npx skills add PolicyLayer/mcp-precheck -a claude-code -y
+```
+
+Supported targets include `claude-code`, `cursor`, `codex`, `gemini-cli`, `github-copilot` and others.
 
 For an agent, one instruction:
 
@@ -42,10 +50,16 @@ Lookups send identifier candidates only — package names, slugs and config key 
 ## Repository layout
 
 ```
-skills/mcp-precheck/SKILL.md   # the skill
+.claude-plugin/plugin.json       # Claude Code marketplace package
+.codex-plugin/plugin.json        # Codex marketplace package
+.cursor-plugin/plugin.json       # Cursor marketplace package
+gemini-extension.json            # Gemini CLI gallery package
+skills/mcp-precheck/SKILL.md     # shared skill payload
 ```
 
-`SKILL.md` here is a mirror of the canonical file served at https://policylayer.com/skill.md — the two are kept byte-identical, and the served copy is the source of truth.
+`SKILL.md` here is a mirror of the canonical file served at https://policylayer.com/skill.md. The served copy is the source of truth; CI checks the two copies remain byte-identical on every change and once a day.
+
+The manifests are thin wrappers around the same skill. They contain no separate instructions and do not add an MCP server, credentials or background process.
 
 ## Related
 

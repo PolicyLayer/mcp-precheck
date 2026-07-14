@@ -1,0 +1,5 @@
+{
+  "name": "mcp-precheck",
+  "version": "1.0.0",
+  "description": "Check MCP servers against the PolicyLayer registry before connecting to them."
+}
