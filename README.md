@@ -47,6 +47,9 @@ Where a tool is flagged, the output includes ready-made deny rules for clients t
 
 Lookups send identifier candidates only — package names, slugs and config key names. Config contents, env values and file paths never leave the machine.
 
+See the skill-specific [privacy notice](PRIVACY.md) for the complete lookup
+data, retention and local-storage details.
+
 ## Repository layout
 
 ```
