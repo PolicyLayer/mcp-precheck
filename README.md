@@ -8,6 +8,12 @@ MCP servers describe themselves, and those descriptions are claims, not facts. T
 
 More: https://policylayer.com/agents
 
+## Find it
+
+- [OpenAI Plugin Directory](https://chatgpt.com/plugins/plugins_6a5672a6f8288191b0635a124c19bdac) — published as **MCP Precheck**
+- [skills.sh](https://skills.sh/PolicyLayer/mcp-precheck) — portable Agent Skills installer
+- [Smithery](https://smithery.ai/skills/policylayer/mcp-precheck) — indexed as `policylayer/mcp-precheck`
+
 ## Install
 
 For a human, in any project:
