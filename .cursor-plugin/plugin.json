@@ -1,0 +1,28 @@
+{
+  "name": "mcp-precheck",
+  "displayName": "MCP Precheck",
+  "version": "1.0.0",
+  "description": "Check MCP servers against the PolicyLayer registry before connecting to them.",
+  "author": {
+    "name": "PolicyLayer",
+    "email": "hello@policylayer.com"
+  },
+  "publisher": "PolicyLayer",
+  "homepage": "https://policylayer.com/agents",
+  "repository": "https://github.com/PolicyLayer/mcp-precheck",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "mcp",
+    "mcp-security",
+    "precheck",
+    "supply-chain"
+  ],
+  "category": "security",
+  "tags": [
+    "agent-safety",
+    "mcp",
+    "security"
+  ],
+  "skills": "./skills/"
+}
